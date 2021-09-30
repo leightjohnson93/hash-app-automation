@@ -1,6 +1,7 @@
 from behave import *
 import platform
 import subprocess
+import time
 
 @given('the user launches the application')
 def step_impl(context):
@@ -14,5 +15,10 @@ def step_impl(context):
         executable = 'lib/broken-hashserve_win.exe'
     else:
         raise NotImplementedError(f'{os_type} not supported')
-        
+
+    #  Save the process id so we can kill it later 
     context.app_pid = subprocess.Popen(executable).pid
+
+    #  Wait to ensure the application has started
+    time.sleep(1)
+    
