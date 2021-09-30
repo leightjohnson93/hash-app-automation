@@ -14,5 +14,5 @@ def step_impl(context):
         executable = 'lib/broken-hashserve_win.exe'
     else:
         raise NotImplementedError(f'{os_type} not supported')
+        
     context.app_pid = subprocess.Popen(executable).pid
-    print(context.app_pid)
