@@ -10,6 +10,9 @@ def before_scenario(context, _):
                      "status_code": None}
 
 
-def after_tag(context, tag):
-    if tag != "shutdown":
+def after_scenario(context, _):
+    # Swallow exception in case app isn't running
+    try:
         os.kill(context.app_pid, signal.SIGTERM)
+    except OSError:
+        pass

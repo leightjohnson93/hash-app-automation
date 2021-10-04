@@ -17,7 +17,7 @@ def step_impl(context):
         try:
             int(job_identifier)
         except Exception:
-            fail(f'expected {job_identifier} to be an integer')
+            fail(f'Expected {job_identifier} to be an integer, but was not')
 
 
 @then('the user receives a base64 encoded password hash')
