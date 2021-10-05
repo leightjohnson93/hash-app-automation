@@ -17,6 +17,8 @@ Automation for the password hashing application using Behave. I chose Behave bec
   -     features/hashing.feature:10  POST to /hash returns job identifier immediately
 - Does not handle requests made concurrently
   -     features/hashing.feature:45  The application can process multiple connections simultaneously
+- Sometimes the server shuts down before sending a 200
+  -     features/shutdown.feature:6  Shutdown request returns status code 200 and shuts down
 
 ## Suggestions
 
