@@ -1,5 +1,7 @@
 # Hashing Application Automation Suite
 
+[![YourActionName Actions Status](https://github.com/leightjohnson93/hash-app-automation/workflows/automation.yml/badge.svg)](https://github.com/leightjohnson93/hash-app-automation/actions)
+
 ## Running the Suite
 
     pip3 install -r requirements.txt
