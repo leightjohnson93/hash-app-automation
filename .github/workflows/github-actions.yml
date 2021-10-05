@@ -3,6 +3,8 @@ on: [push]
 jobs:
   Run-On-Linux:
     runs-on: ubuntu-latest
+    env:
+      PORT: 8088
     steps:
       - uses: actions/checkout@v2
       - run: pip3 install -r requirements.txt
