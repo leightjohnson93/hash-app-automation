@@ -8,9 +8,9 @@ defaults:
     - run: behave
 on: [push]
 jobs:
-  Linux
+  Linux:
     runs-on: ubuntu-latest
-  macOS
+  macOS:
     runs-on: macos-11
-  Windows
+  Windows:
     runs-on: windows-latest
