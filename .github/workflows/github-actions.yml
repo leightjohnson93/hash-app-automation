@@ -4,5 +4,6 @@ jobs:
   Run-On-Linux:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: pip3 install -r requirements.txt
       - run: behave
