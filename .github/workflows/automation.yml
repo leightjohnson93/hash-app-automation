@@ -1,4 +1,4 @@
-name: Run Automation
+name: Automation
 on: [push]
 jobs:
   test:
