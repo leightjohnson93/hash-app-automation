@@ -9,7 +9,7 @@
 
 ## About
 
-Automation for the password hashing application using Behave. I chose Behave because it is a popular BDD framework and I am most familiar with automation using BDD. The application is restarted for each scenario, meaning that every scenario can be run independently of one another, and in any order. Information is passed between steps via a context object. Each time a new request is made, information about that request is stored. It also stores other information, such as the application process id.  There are GitHub Actions that run the suite against Linux, macOS, and Windows on every push.
+Automation for the password hashing application using Behave. I chose Behave because it is a popular BDD framework and I am most familiar with automation using BDD. The application is restarted for each scenario, meaning that every scenario can be run independently of one another, and in any order. Information is passed between steps via a context object. Each time a new request is made, information about that request is stored. It also stores other information, such as the application process id.  There are GitHub Actions that run the suite against Linux, macOS, and Windows on every push.  Given more time, I would have liked to implement smarter step matching, so for example "the user makes a POST request..." would match the same step as "the user makes POST requests..." but I found regex step matching in Behave to be more difficult than Serenity/Cucumber Java.
 
 ## Defects Found
 
