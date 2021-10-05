@@ -4,7 +4,8 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
-      matrix: [ubuntu-latest, macos-11, windows-latest]
+      matrix:
+        os: [ubuntu-latest, macos-11, windows-latest]
     env:
       PORT: 8088
     steps:
