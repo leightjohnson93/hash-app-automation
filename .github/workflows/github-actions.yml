@@ -1,23 +1,26 @@
 name: Run Automation
-defaults:
-  env:
-    PORT: 8088
 on: [push]
 jobs:
   Linux:
     runs-on: ubuntu-latest
+    env:
+      PORT: 8088
     steps:
       - uses: actions/checkout@v2
       - run: pip3 install -r requirements.txt
       - run: behave
   macOS:
     runs-on: macos-11
+      env:
+        PORT: 8088
     steps:
     - uses: actions/checkout@v2
     - run: pip3 install -r requirements.txt
     - run: behave
   Windows:
     runs-on: windows-latest
+    env:
+      PORT: 8088
     steps:
       - uses: actions/checkout@v2
       - run: pip3 install -r requirements.txt
