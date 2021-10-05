@@ -7,7 +7,7 @@ from psutil import process_iter, ZombieProcess
 
 
 def check_process():
-    # process.name() throws ZombieProcess on OSX if recently terminated
+    # process.name() throws ZombieProcess on macOS if recently terminated
     for process in process_iter():
         try:
             if "broken-hashserve" in process.name():
