@@ -31,18 +31,18 @@ def step_impl(context):
     else:
         raise NotImplementedError(f"{os_type} not supported")
 
-    #  Save the process id so we can kill it later
+    # Save the process id so we can kill it later
     context.app_pid = Popen(executable).pid
 
-    #  Wait to ensure the application has started
+    # Wait to ensure the application has started
     time.sleep(0.5)
 
 
 @then("the application is running")
-def step_impl(context):
+def step_impl(_):
     assert_that(check_process()).described_as("application is running").is_true()
 
 
 @then("the application is not running")
-def step_impl(context):
+def step_impl(_):
     assert_that(check_process()).described_as("application is running").is_false()
