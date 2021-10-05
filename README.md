@@ -12,9 +12,12 @@ Automation for the password hashing application using Behave. I chose Behave bec
 ## Defects Found
 
 - Average hashing time is not accurate
+  -     features/hashing.feature:21  GET to /stats returns total requests and average time
 - Hash takes 5 seconds to return a job identifier
+  -     features/hashing.feature:10  POST to /hash returns job identifier immediately
 - Does not handle requests made concurrently
+  -     features/hashing.feature:45  The application can process multiple connections simultaneously
 
 ## Suggestions
 
-- Might be easier to set the port instead of using an environment variable
+- Might be easier to set the port with a command line argument instead of using an environment variable
