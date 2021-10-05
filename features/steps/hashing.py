@@ -1,8 +1,9 @@
-from behave import *
-from assertpy import assert_that, fail
-import time
 import base64
 import hashlib
+import time
+
+from assertpy import assert_that, fail
+from behave import *
 
 
 @when('the user waits for "{seconds:d}" seconds')

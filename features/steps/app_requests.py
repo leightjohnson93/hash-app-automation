@@ -1,10 +1,11 @@
-from behave import *
-from assertpy import assert_that
-from concurrent.futures import ThreadPoolExecutor
-from requests.exceptions import ReadTimeout
 import concurrent.futures
-import requests
 import os
+from concurrent.futures import ThreadPoolExecutor
+
+import requests
+from assertpy import assert_that
+from behave import *
+from requests.exceptions import ReadTimeout
 
 
 def get_url(path):

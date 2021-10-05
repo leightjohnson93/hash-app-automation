@@ -1,9 +1,10 @@
-from behave import *
-from assertpy import assert_that
-from subprocess import Popen
 import platform
 import time
-from psutil import process_iter, ZombieProcess
+from subprocess import Popen
+
+from assertpy import assert_that
+from behave import *
+from psutil import ZombieProcess, process_iter
 
 
 def check_process():
