@@ -3,7 +3,18 @@ from assertpy import assert_that
 from subprocess import Popen
 import platform
 import time
-import psutil
+from psutil import process_iter, ZombieProcess
+
+
+def check_process():
+    # process.name() throws ZombieProcess on OSX if recently terminated
+    for process in process_iter():
+        try:
+            if 'broken-hashserve' in process.name():
+                return True
+        except ZombieProcess:
+            pass
+    return False
 
 
 @given('the user launches the application')
@@ -28,11 +39,11 @@ def step_impl(context):
 
 @then('the application is running')
 def step_impl(context):
-    assert_that(psutil.pid_exists(context.app_pid)).described_as(
+    assert_that(check_process()).described_as(
         "application is running").is_true()
 
 
 @then('the application is not running')
 def step_impl(context):
-    assert_that(psutil.pid_exists(context.app_pid)).described_as(
+    assert_that(check_process()).described_as(
         "application is running").is_false()
